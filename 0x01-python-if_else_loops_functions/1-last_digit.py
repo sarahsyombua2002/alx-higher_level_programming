@@ -2,6 +2,9 @@
 import random
 number = random.randint(-10000, 10000)
 
+# Get the last digit of the number
+last_digit = abs(number) % 10
+
 #Determine the sign of the last digit
 if number < 0:
     last_digit = -last_digit
