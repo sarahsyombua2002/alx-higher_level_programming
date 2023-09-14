@@ -7,8 +7,8 @@ def print_matrix_integer(matrix=[[]]):
                     print("{:d}".format(matrix[i][j]), end=" ")
                 else:
                      print("{:d}".format(matrix[i][j]), end=" $")
-            print("$")  # Add "$" at the end of each row
-
-        print("$")  # Add an extra "$" after the entire matrix
+            print("$")
+            
+            print("$")
     else:
         print()
