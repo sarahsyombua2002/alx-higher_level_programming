@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-
 def print_matrix_integer(matrix=[[]]):
-    if not matrix:
-        return
+    if matrix:
+        for i in range(0, len(matrix)):
+            for j in range(0, len(matrix[i])):
+                if j != len(matrix[i]) - 1:
+                    print("{:d}".format(matrix[i][j]), end=" ")
+                else:
+                     print("{:d}".format(matrix[i][j]), end=" $")
+            print("$")  # Add "$" at the end of each row
 
-    max_width = max(len(str(num)) for row in matrix for num in row)
-
-    for row in matrix:
-        for num in row:
-            print("{:>{width}}".format(num, width=max_width), end=" ")
-        print("$")
-
-    print("$")  #
+        print("$")  # Add an extra "$" after the entire matrix
+    else:
+        print()
