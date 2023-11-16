@@ -8,18 +8,16 @@ import sys
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-def main():
-    """contain main code in function
-    """
-    try:
-        new_list = load_from_json_file('add_item.json')
-    except:  # file didn't exist to read from
-        new_list = []
 
-    new_list.extend([sys.argv[i] for i in range(0, len(sys.argv)) if i != 0])
+if __name__ == "__main__":
+
+    filename = "add_item.json"
+
     try:
-        save_to_json_file(new_list, 'add_item.json')
+        arg_list = load_from_json_file(filename)
     except:
-        pass
+        arg_list = []
 
-main()
+    for arg in sys.argv[1:]:
+        arg_list.append(arg)
+    save_to_json_file(arg_list, filename)
